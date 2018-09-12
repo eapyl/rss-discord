@@ -1,5 +1,5 @@
-// const Discord = require('discord.js');
-// const client = new Discord.Client();
+const Discord = require('discord.js');
+const client = new Discord.Client();
 var fs = require('fs');
 var FeedParser = require('feedparser');
 var request = require('request');
@@ -36,9 +36,9 @@ const maxNumberOfNewsToRemember = 5;
 })();
 
 // Discord related work
-// client.on('ready', () => {
-//     log('I am ready!');
-//     var generalChannel = client.channels.get("25466045464298784169786");
+client.on('ready', () => {
+    log('I am ready!');
+    var generalChannel = client.channels.get("25466045464298784169786");
     if (!postNewsInterval) {
         postNewsInterval = setInterval(() => {
             if (currentNews.length === 0) {
@@ -47,17 +47,16 @@ const maxNumberOfNewsToRemember = 5;
                 // const client = new Discord.Client();
             }
             var articleToPost = currentNews.shift();
-            // generalChannel.sendMessage(newsToPost.title + " - " + newsToPost.link);
+            generalChannel.sendMessage(newsToPost.title + " - " + newsToPost.link);
             log("Article is sent to Discord: " + articleToPost.title + " - " + articleToPost.link);
             postedNews.push(articleToPost);
             saveAll(postedNews);
-            log("Post " + articleToPost.link);
             log("Left in array - " + currentNews.length);
         }, postNewsPeriod);
     }
-// });
+});
 
-// client.login('MjgyNDg5MjQ0MDEyNzczMzc2.C4nUkw.Na6H7ZVrXbMZbXv4Wt9p8cZaj2Q');
+client.login('MjgyNDg5MjQ0MDEyNzczMzc2.C4nUkw.Na6H7ZVrXbMZbXv4Wt9p8cZaj2Q');
 
 /// region DAEMONS
 // periodically download news from rss feeds
