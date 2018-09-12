@@ -1,0 +1,12 @@
+{
+  "name": "disc",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "feedparser": "^2.2.9",
+    "jfs": "^0.3.0",
+    "request": "^2.88.0"
+  }
+}
