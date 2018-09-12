@@ -18,10 +18,10 @@ var loadNewsInterval;
 var cleanOldNewsInterval;
 const postedNewsFilePath = "./postedNews.json";
 
-const postNewsPeriod =  1000 * 3; // 30 sec
+const postNewsPeriod =  60000 * 30; // 30 sec
 const loadNewsPeriod =  60000 * 60 * 24; // 24 hour
-const cleanOldNewsPeriod =  1000 * 5; // 24 hour
-const maxNumberOfNewsToRemember = 5;
+const cleanOldNewsPeriod =  60000 * 60 * 24; // 24 hour
+const maxNumberOfNewsToRemember = 1000;
 /// endregion
 
 /// ENTRY POINT
